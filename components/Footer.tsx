@@ -93,7 +93,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom copyright notice */}
         <div className="pt-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-bg-main/60">
-          <p>© 2019–2026 LilzBake. Semua rasa, semua kangen, dari Surabaya Timur.</p>
+          <p>© 2019–Present LilzBake. Semua rasa, semua kangen, dari Surabaya Timur.</p>
           <p className="font-display italic text-accent-gold/80">#TasteOfNostalgia</p>
         </div>
 

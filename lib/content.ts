@@ -269,14 +269,14 @@ export const CONTACT_CARDS = [
   {
     id: 'wa1',
     label: 'WhatsApp Admin 1',
-    value: '0812-3333-6560',
+    value: '0812-1780-0067',
     href: WA_LINKS.admin1General,
     isExternal: true,
   },
   {
     id: 'wa2',
     label: 'WhatsApp Admin 2',
-    value: '0812-6722-8888',
+    value: '0817-0388-8900',
     href: WA_LINKS.admin2General,
     isExternal: true,
   },
