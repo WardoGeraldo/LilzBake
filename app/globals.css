@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg-main: #fde5db;
+  --color-bg-alt: #fadfc9;
+  --color-surface: #ffffff;
+  --color-text-primary: #a16c37;
+  --color-text-secondary: #a3692d;
+  --color-text-body: #9a6f42;
+  --color-text-dark: #5c3a1e;
+  --color-accent-gold: #c9974f;
+  --color-ink: #3d2712;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-body);
+}
+
+::selection {
+  background-color: var(--color-bg-alt);
+  color: var(--color-text-dark);
+}
+
+/* Accessible focus ring using accent-gold */
+*:focus-visible {
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: 3px;
+}
+
+/* Custom scrollbar matching brand palette */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4a373;
+  border-radius: 9999px;
+  border: 2px solid var(--color-bg-alt);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* Prevent layout shifts on images */
+img {
+  text-indent: -9999px;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
