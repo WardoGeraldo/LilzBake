@@ -47,8 +47,8 @@ export const ABOUT_CONTENT = {
   badge: 'Sejak 2019',
   title: 'Bakery yang Setia Sama Rasa Lama',
   paragraphs: [
-    'LilzBake lahir dari kerinduan akan rasa roti dan cake toko jadul — yang lembut, sederhana, dan selalu bikin kangen. Sejak 2019, kami membuat ulang rasa-rasa itu dengan standar yang lebih tinggi: bahan-bahan premium, tanpa bahan pengawet, dan proses yang dikerjakan dengan hati oleh tim kami di Surabaya Timur.',
-    'Dari roti bantal yang empuk, roti sisir yang manis legit, roti smeer yang creamy, sampai cake jadoel dalam kemasan hampers yang cantik — setiap produk LilzBake dibuat untuk satu tujuan sederhana: membuat kamu (atau orang tersayangmu) bergumam, "ini rasanya kayak dulu."',
+    'LilzBake lahir dari kerinduan akan rasa roti dan cake jadoel yang lembut, sederhana, dan selalu bikin kangen. Sejak 2019, kami membuat ulang rasa-rasa itu dengan standar yang lebih tinggi: bahan-bahan premium, tanpa bahan pengawet, dan proses yang dikerjakan dengan hati oleh tim kami di Surabaya Timur.',
+    'Dari roti bantal yang empuk, roti sisir yang manis legit, roti smeer yang creamy, sampai cake jadoel dalam kemasan hampers yang cantik. Setiap produk LilzBake dibuat untuk satu tujuan sederhana: mengembalikan rasa masa kecil yang sudah lama hilang dari toko roti modern.',
   ],
   values: ['Bahan Premium', 'Tanpa Pengawet', 'Resep Nostalgia'],
   image: '/images/product-roti-sisir.jpg',

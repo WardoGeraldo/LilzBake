@@ -36,7 +36,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
       {/* Subtle bottom border highlight */}
       <div className="mt-3 pt-2.5 border-t border-bg-alt flex items-center justify-between text-xs text-text-secondary font-medium">
-        <span>Resep Jadul</span>
+        <span>Resep Jadoel</span>
         <span className="font-display italic text-accent-gold group-hover:translate-x-0.5 transition-transform">
           Fresh Daily →
         </span>

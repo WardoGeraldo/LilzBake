@@ -30,7 +30,7 @@ export const Products: React.FC = () => {
               Produk Favorit
             </h2>
             <p className="text-text-body text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-              Delapan rasa jadul andalan kami — dan semuanya bisa dikemas jadi hampers cantik.
+              Delapan rasa jadoel andalan kami, dan semuanya bisa dikemas jadi hampers cantik.
             </p>
           </ScrollReveal>
         </div>

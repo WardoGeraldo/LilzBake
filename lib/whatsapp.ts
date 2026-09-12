@@ -1,5 +1,5 @@
-export const ADMIN_1 = '6281233336560';
-export const ADMIN_2 = '6281267228888';
+export const ADMIN_1 = '6281217800067';
+export const ADMIN_2 = '6281703888900';
 
 export function waLink(phone: string, message: string) {
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;

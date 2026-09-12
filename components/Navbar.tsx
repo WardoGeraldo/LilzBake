@@ -81,7 +81,7 @@ export const Navbar: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-medium text-surface bg-text-primary hover:bg-text-dark transition-all duration-200 shadow-brand-sm hover:scale-[1.03] active:scale-[0.98]"
           >
-            Chat Admin
+            Pesan Sekarang
           </a>
         </div>
 

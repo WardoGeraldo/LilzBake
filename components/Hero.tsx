@@ -97,16 +97,15 @@ export const Hero: React.FC<HeroProps> = ({ heroSlotRef, isDesktop = false }) =>
               initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
               animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: 'easeOut', delay: 0 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-text-secondary/25 bg-surface/70 backdrop-blur-xs text-text-primary text-xs font-semibold tracking-wider uppercase mb-5 shadow-xs"
+              className="inline-flex items-center px-3.5 py-1.5 rounded-full border border-text-secondary/25 bg-surface/70 backdrop-blur-xs text-text-primary text-xs font-semibold tracking-wider uppercase mb-5 shadow-xs"
             >
-              <BreadDoodle type="sparkle" size={14} strokeColor="#c9974f" strokeWidth={2} />
               <span>{HERO_CONTENT.badge}</span>
             </motion.div>
 
             {/* 0.15s: Headline H1 "Rasa yang Bikin Kangen." staggered by word */}
-            <h1 className="font-display font-semibold text-text-primary text-4xl sm:text-5xl lg:text-[62px] leading-[1.12] tracking-[-0.015em] mb-3 text-balance">
+            <h1 className="font-display font-semibold text-text-primary text-4xl sm:text-5xl lg:text-[62px] leading-[1.2] sm:leading-[1.18] tracking-[-0.015em] mb-4 text-balance pb-1">
               {headlineWords.map((word, index) => (
-                <span key={index} className="inline-block mr-[0.28em] overflow-hidden">
+                <span key={index} className="inline-block mr-[0.28em] py-0.5">
                   <motion.span
                     className="inline-block"
                     initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 14 }}
