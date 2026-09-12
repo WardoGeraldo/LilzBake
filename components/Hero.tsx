@@ -7,12 +7,20 @@ import { HERO_CONTENT } from '@/lib/content';
 import { WA_LINKS } from '@/lib/whatsapp';
 import { BreadDoodle } from './decorative/BreadDoodle';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  heroSlotRef?: React.RefObject<HTMLDivElement>;
+  isDesktop?: boolean;
+}
+
+export const Hero: React.FC<HeroProps> = ({ heroSlotRef, isDesktop = false }) => {
   const shouldReduceMotion = useReducedMotion();
   const [isTabVisible, setIsTabVisible] = useState(true);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isDesktopPointer, setIsDesktopPointer] = useState(false);
+  const internalSlotRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLElement>(null);
+
+  const activeSlotRef = heroSlotRef || internalSlotRef;
 
   // Tab visibility listener to save CPU/battery
   useEffect(() => {
@@ -59,7 +67,7 @@ export const Hero: React.FC = () => {
       className="relative min-h-[92vh] lg:min-h-screen pt-28 pb-16 lg:pt-36 lg:pb-24 flex items-center bg-gradient-to-br from-bg-main via-bg-main to-bg-alt overflow-hidden"
     >
       {/* ============================================================ */}
-      {/* LAYER 3: Watermark background doodles (opacity 4-6%) */}
+      {/* LAYER 3: Watermark background doodles (opacity 3-5%) */}
       {/* ============================================================ */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
         {/* Top right subtle doodle */}
@@ -71,18 +79,18 @@ export const Hero: React.FC = () => {
           <BreadDoodle type="croissant" size={320} strokeWidth={1} strokeColor="#a16c37" />
         </div>
         {/* Subtle center wheat */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 opacity-4">
-          <BreadDoodle type="wheat" size={260} strokeWidth={0.8} strokeColor="#a16c37" />
+        <div className="absolute top-1/3 left-[45%] -translate-x-1/2 opacity-[0.035]">
+          <BreadDoodle type="wheat" size={240} strokeWidth={0.8} strokeColor="#a16c37" />
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* ============================================================ */}
-          {/* LEFT COLUMN: Text & CTAs (~55% on desktop: 7 cols) */}
+          {/* LEFT COLUMN: Text & CTAs (6 cols on lg/xl) */}
           {/* ============================================================ */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
+          <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-start text-left">
             
             {/* 0.0s: Badge "Baked With Love · Est. 2019" */}
             <motion.div
@@ -173,9 +181,9 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* ============================================================ */}
-          {/* RIGHT COLUMN: Layered Visual Composition (~45%: 5 cols) */}
+          {/* RIGHT COLUMN: Layered Visual Composition (6 cols on lg/xl) */}
           {/* ============================================================ */}
-          <div className="lg:col-span-5 relative flex items-center justify-center pt-6 lg:pt-0">
+          <div className="lg:col-span-6 xl:col-span-6 relative flex items-center justify-center pt-8 lg:pt-0">
             
             {/* ---------------------------------------------------------- */}
             {/* LAYER 2: Floating line-art doodles around box + Mouse move */}
@@ -185,8 +193,8 @@ export const Hero: React.FC = () => {
                 {/* Line art doodle 1: Roti Sisir at top right */}
                 <motion.div
                   style={{
-                    x: mousePos.x * 22,
-                    y: mousePos.y * 18,
+                    x: mousePos.x * 24,
+                    y: mousePos.y * 20,
                   }}
                   animate={
                     isTabVisible
@@ -201,16 +209,16 @@ export const Hero: React.FC = () => {
                     repeat: Infinity,
                     ease: 'easeInOut',
                   }}
-                  className="absolute -top-6 right-2 sm:right-6 z-10 pointer-events-none opacity-40 select-none"
+                  className="absolute -top-10 -right-2 sm:-right-6 z-10 pointer-events-none opacity-40 select-none"
                 >
-                  <BreadDoodle type="roti-sisir" size={68} strokeColor="#a16c37" strokeWidth={1.8} />
+                  <BreadDoodle type="roti-sisir" size={76} strokeColor="#a16c37" strokeWidth={1.8} />
                 </motion.div>
 
                 {/* Line art doodle 2: Croissant at bottom left */}
                 <motion.div
                   style={{
-                    x: mousePos.x * -18,
-                    y: mousePos.y * -14,
+                    x: mousePos.x * -20,
+                    y: mousePos.y * -16,
                   }}
                   animate={
                     isTabVisible
@@ -225,16 +233,16 @@ export const Hero: React.FC = () => {
                     repeat: Infinity,
                     ease: 'easeInOut',
                   }}
-                  className="absolute -bottom-8 -left-4 sm:left-2 z-10 pointer-events-none opacity-40 select-none"
+                  className="absolute -bottom-10 -left-6 sm:-left-4 z-10 pointer-events-none opacity-40 select-none"
                 >
-                  <BreadDoodle type="croissant" size={62} strokeColor="#a16c37" strokeWidth={1.8} />
+                  <BreadDoodle type="croissant" size={70} strokeColor="#a16c37" strokeWidth={1.8} />
                 </motion.div>
 
                 {/* Line art doodle 3: Wheat sparkle at center right */}
                 <motion.div
                   style={{
-                    x: mousePos.x * 12,
-                    y: mousePos.y * 12,
+                    x: mousePos.x * 14,
+                    y: mousePos.y * 14,
                   }}
                   animate={
                     isTabVisible
@@ -249,104 +257,106 @@ export const Hero: React.FC = () => {
                     repeat: Infinity,
                     ease: 'easeInOut',
                   }}
-                  className="absolute top-1/2 -right-4 sm:right-0 z-10 pointer-events-none opacity-45 select-none"
+                  className="absolute top-1/2 -right-6 sm:-right-8 z-10 pointer-events-none opacity-45 select-none"
                 >
-                  <BreadDoodle type="sparkle" size={28} strokeColor="#c9974f" strokeWidth={2} />
+                  <BreadDoodle type="sparkle" size={32} strokeColor="#c9974f" strokeWidth={2} />
                 </motion.div>
               </>
             )}
 
             {/* ---------------------------------------------------------- */}
-            {/* LAYER 1: Main Box Packaging Container */}
+            {/* ANCHOR SLOT: Coordinates target for desktop morphing / Mobile fallback */}
             {/* ---------------------------------------------------------- */}
-            <div className="relative w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[540px] flex flex-col items-center">
-              
-              {/* Box Image with Unboxing Sequence + Idle Floating Loop */}
-              <motion.div
-                initial={
-                  shouldReduceMotion
-                    ? { opacity: 0 }
-                    : {
-                        opacity: 0,
-                        y: -60,
-                        rotate: -8,
-                        scale: 0.92,
-                      }
-                }
-                animate={
-                  shouldReduceMotion
-                    ? { opacity: 1 }
-                    : isTabVisible
-                    ? {
-                        opacity: 1,
-                        y: [0, -10, 0],
-                        rotate: [-4, -2, -4],
-                        scale: 1,
-                      }
-                    : {
-                        opacity: 1,
-                        y: 0,
-                        rotate: -4,
-                        scale: 1,
-                      }
-                }
-                transition={
-                  shouldReduceMotion
-                    ? { duration: 0.4 }
-                    : {
-                        // Entry transition
-                        opacity: { duration: 0.8, delay: 0.3 },
-                        scale: { duration: 1.0, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
-                        // Floating loops after initial settle (1.0s)
-                        y: {
-                          duration: 4,
-                          repeat: Infinity,
-                          repeatType: 'mirror',
-                          ease: 'easeInOut',
-                          delay: 1.0,
-                        },
-                        rotate: {
-                          duration: 5,
-                          repeat: Infinity,
-                          repeatType: 'mirror',
-                          ease: 'easeInOut',
-                          delay: 1.0,
-                        },
-                      }
-                }
-                className="relative z-20 will-change-transform filter drop-shadow-[0_12px_24px_rgba(161,108,55,0.18)]"
-              >
-                <Image
-                  src={HERO_CONTENT.boxImage}
-                  alt={HERO_CONTENT.boxAlt}
-                  width={900}
-                  height={600}
-                  priority
-                  className="w-full h-auto object-contain select-none pointer-events-none"
-                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 520px"
-                />
-              </motion.div>
+            <div
+              ref={activeSlotRef}
+              className="relative w-full max-w-[460px] sm:max-w-[520px] md:max-w-[580px] lg:max-w-[620px] xl:max-w-[660px] aspect-[1181/981] flex flex-col items-center justify-center"
+            >
+              {/* MOBILE FALLBACK (< 768px or prefers-reduced-motion): Render native Hero box */}
+              {(!isDesktop || shouldReduceMotion) && (
+                <div className="relative w-full h-full flex flex-col items-center justify-center">
+                  <motion.div
+                    initial={
+                      shouldReduceMotion
+                        ? { opacity: 0 }
+                        : {
+                            opacity: 0,
+                            y: -60,
+                            rotate: -8,
+                            scale: 0.92,
+                          }
+                    }
+                    animate={
+                      shouldReduceMotion
+                        ? { opacity: 1 }
+                        : isTabVisible
+                        ? {
+                            opacity: 1,
+                            y: [0, -10, 0],
+                            rotate: [-4, -2, -4],
+                            scale: 1,
+                          }
+                        : {
+                            opacity: 1,
+                            y: 0,
+                            rotate: -4,
+                            scale: 1,
+                          }
+                    }
+                    transition={
+                      shouldReduceMotion
+                        ? { duration: 0.4 }
+                        : {
+                            opacity: { duration: 0.8, delay: 0.3 },
+                            scale: { duration: 1.0, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
+                            y: {
+                              duration: 4,
+                              repeat: Infinity,
+                              repeatType: 'mirror',
+                              ease: 'easeInOut',
+                              delay: 1.0,
+                            },
+                            rotate: {
+                              duration: 5,
+                              repeat: Infinity,
+                              repeatType: 'mirror',
+                              ease: 'easeInOut',
+                              delay: 1.0,
+                            },
+                          }
+                    }
+                    className="relative w-full h-full z-20 will-change-transform filter drop-shadow-[0_16px_32px_rgba(161,108,55,0.22)]"
+                  >
+                    <Image
+                      src={HERO_CONTENT.boxImage}
+                      alt={HERO_CONTENT.boxAlt}
+                      width={1181}
+                      height={981}
+                      priority
+                      className="w-full h-full object-contain select-none pointer-events-none"
+                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 55vw, 660px"
+                    />
+                  </motion.div>
 
-              {/* Dynamic Ground Shadow underneath box that scales inversely with floating */}
-              {!shouldReduceMotion && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  animate={
-                    isTabVisible
-                      ? {
-                          opacity: [0.22, 0.15, 0.22],
-                          scale: [1, 0.9, 1],
-                        }
-                      : { opacity: 0.22, scale: 1 }
-                  }
-                  transition={{
-                    opacity: { duration: 4, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut', delay: 1.0 },
-                    scale: { duration: 4, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut', delay: 1.0 },
-                  }}
-                  className="w-[75%] h-5 bg-[#5c3a1e] rounded-[100%] filter blur-md -mt-4 z-10 select-none pointer-events-none"
-                />
+                  {/* Fallback Ground Shadow */}
+                  {!shouldReduceMotion && (
+                    <motion.div
+                      animate={
+                        isTabVisible
+                          ? {
+                              opacity: [0.22, 0.15, 0.22],
+                              scale: [1, 0.9, 1],
+                            }
+                          : { opacity: 0.22, scale: 1 }
+                      }
+                      transition={{
+                        opacity: { duration: 4, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut', delay: 1.0 },
+                        scale: { duration: 4, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut', delay: 1.0 },
+                      }}
+                      className="w-[85%] h-6 bg-[#5c3a1e] rounded-[100%] filter blur-md -mt-5 z-10 select-none pointer-events-none"
+                    />
+                  )}
+                </div>
               )}
-
             </div>
 
           </div>

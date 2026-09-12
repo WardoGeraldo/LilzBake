@@ -1,8 +1,6 @@
 import React from 'react';
 import { Navbar } from '@/components/Navbar';
-import { Hero } from '@/components/Hero';
-import { Ticker } from '@/components/Ticker';
-import { About } from '@/components/About';
+import { ScrollOrchestrator } from '@/components/ScrollOrchestrator';
 import { Products } from '@/components/Products';
 import { Gallery } from '@/components/Gallery';
 import { VideoSection } from '@/components/VideoSection';
@@ -19,14 +17,8 @@ export default function Home() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* 2. Hero Section with unboxing sequence and floating box */}
-        <Hero />
-
-        {/* Endless Marquee Ticker right under Hero */}
-        <Ticker />
-
-        {/* 3. About Section */}
-        <About />
+        {/* Continuous Scroll Orchestration: Hero -> Ticker -> About */}
+        <ScrollOrchestrator />
 
         {/* 4. Products Section with 8 products & hampers banner */}
         <Products />

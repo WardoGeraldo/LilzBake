@@ -12,7 +12,7 @@ export const Ticker: React.FC = () => {
 
   return (
     <div
-      className="relative w-full h-12 sm:h-14 bg-text-dark text-bg-main overflow-hidden flex items-center select-none z-20 border-y border-text-dark"
+      className="relative w-full h-12 sm:h-14 bg-text-dark text-bg-main overflow-hidden flex items-center select-none z-10 border-y border-text-dark"
       aria-label="Informasi utama LilzBake"
     >
       {/* Decorative gradient masks at left and right edges for smooth fading */}

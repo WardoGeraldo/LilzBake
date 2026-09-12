@@ -51,7 +51,7 @@ export const ABOUT_CONTENT = {
     'Dari roti bantal yang empuk, roti sisir yang manis legit, roti smeer yang creamy, sampai cake jadoel dalam kemasan hampers yang cantik — setiap produk LilzBake dibuat untuk satu tujuan sederhana: membuat kamu (atau orang tersayangmu) bergumam, "ini rasanya kayak dulu."',
   ],
   values: ['Bahan Premium', 'Tanpa Pengawet', 'Resep Nostalgia'],
-  image: '/images/product-roti-bantal-wide.jpg',
+  image: '/images/product-roti-sisir.jpg',
   imageAlt: 'Close-up roti bantal LilzBake yang empuk dan lembut',
 };
 

@@ -35,10 +35,9 @@ yang harus dipegang AI agent:
 
 ---
 
-## A. Hero — "Unboxing Sequence" (animasi utama, sekali saat page load)
+## A. Hero — "Unboxing Sequence" & Hero-to-About Morphing
 
-Timeline (total durasi ~1.8 detik untuk seluruh sequence, lalu lanjut ke
-idle loop):
+Timeline initial load (total durasi ~1.8s, lalu idle loop):
 
 | Waktu (detik) | Elemen | Animasi |
 |---|---|---|
@@ -47,32 +46,58 @@ idle loop):
 | 0.4 | Tagline italic "Taste Of Nostalgia" | opacity 0→1, sedikit scale 0.96→1, durasi 0.6s |
 | 0.5 | Subheadline paragraf | opacity 0→1, translateY 10px→0, durasi 0.5s |
 | 0.65 | Tombol CTA (2 tombol) | opacity 0→1 + translateY 10px→0, stagger 0.08s antar tombol |
-| 0.3 (paralel) | Box packaging image | masuk dari atas: translateY -60px→0 sambil rotate dari -8deg → -4deg (posisi akhir sedikit miring, bukan lurus sempurna), scale 0.92→1, easing custom `cubic-bezier(0.16, 1, 0.3, 1)` (efek "jatuh lalu settle" — sedikit overshoot lembut di akhir), durasi 1.0s |
-| 0.9 (setelah box settle) | Shadow di bawah box | fade in mengikuti posisi box, opacity 0→0.25 |
-| 1.0 (setelah semua masuk) | Box packaging | masuk ke **idle floating loop** (lihat di bawah) — tidak berhenti, looping selama user di hero |
-| 0.6–1.4 (paralel, halus) | 2–3 elemen dekoratif line-art roti (SVG kecil) di sekitar box | fade in + translate diagonal singkat (mis. dari 15px offset ke posisi akhir), lalu ikut floating pelan dengan periode berbeda dari box utama (supaya tidak terasa seperti "menempel kaku") |
+| 0.3 (paralel) | Box packaging image | masuk dari atas: translateY -60px→0 sambil rotate dari -8deg → -4deg (posisi miring organik), scale 0.92→1, easing `cubic-bezier(0.16, 1, 0.3, 1)`, durasi 1.0s |
+| 0.9 | Shadow di bawah box | fade in mengikuti box, opacity 0→0.25 |
+| 1.0 | Box packaging | masuk ke **idle floating loop** (hanya aktif saat Hero in-view dan belum di-scroll) |
+| 0.6–1.4 (paralel) | 2–3 SVG dekorasi line-art | fade in + float diagonal pelan |
 
-**Idle floating loop (setelah sequence awal selesai, berulang terus selama
-hero terlihat):**
-- Box: `translateY` naik-turun ±10px, durasi 4s per siklus, easing
-  `easeInOut`, `repeat: Infinity`, `repeatType: mirror`.
-- Rotasi ikut halus: dari -4deg ke -2deg dan kembali, durasi 5s (periode
-  beda dari translateY supaya gerakannya organik, tidak sinkron kaku).
-- Shadow di bawah box: scale & opacity berlawanan arah dengan translateY box
-  (box naik → shadow mengecil & memudar sedikit; box turun → shadow membesar)
-  — efek ini yang membuat floating terasa punya "bobot", bukan sekadar
-  elemen mengambang tanpa gravitasi.
-- Elemen dekoratif line-art: floating dengan amplitudo lebih kecil (±5px),
-  periode 6-7s, arah gerak sedikit berbeda dari box (mis. diagonal, bukan
-  vertikal murni) supaya terasa seperti debu tepung/remah yang melayang
-  pelan, bukan duplikat animasi box.
+**Idle floating loop (hanya saat posisi scroll = 0 / di viewport Hero):**
+- Box: `translateY` naik-turun ±10px, durasi 4s, easing `easeInOut`, repeat mirror.
+- Rotasi halus: -4deg ke -2deg (durasi 5s).
+- Shadow di bawah box: scale & opacity inverse terhadap translateY box.
 
-**Parallax scroll (opsional tapi disarankan, ringan):** saat user scroll ke
-bawah menjauhi hero, box bergerak translateY sedikit lebih lambat dari
-kecepatan scroll (`translateY: scrollY * 0.15`) dan fade out opacity menuju
-0 saat mendekati batas section About — memberi kesan depth tanpa JS berat
-(gunakan `useScroll` + `useTransform` dari Framer Motion, atau CSS
-`position: sticky` + opacity berbasis scroll listener yang di-throttle).
+---
+
+## A.1. Continuous Scroll Transition: Hero Box → About Image Card Frame
+
+Ini adalah **momen interaksi utama (signature transition)** yang menghubungkan Hero dan About. Packaging box di Hero tidak sekadar fade out, melainkan "mendarat" dan bertransformasi (*morph*) menjadi bingkai kartu foto roti di About section saat user melakukan scroll.
+
+### Arsitektur Implementasi (Framer Motion / Next.js):
+- Gunakan kontainer pembungkus bersama (shared scroll container) atau kalkulasi `useScroll` targetting hero-ke-about.
+- Nilai scroll progress (`scrollYProgress`) dipetakan dari `[0, 1]` di mana:
+  - `0.0`: User berada tepat di Hero (posisi awal box).
+  - `0.2 - 0.4`: User mulai scroll melewati Marquee ticker.
+  - `0.8 - 1.0`: User sampai di About section, elemen mendarat sempurna menjadi Frame Foto.
+
+### Mapping Interpolasi Scroll (`useTransform`):
+1. **Posisi & Ukuran (Translate & Scale):**
+   - **X / Y Position**: Kotak berpindah mulus dari posisi box hero ke slot frame gambar About section di kolom kanan.
+   - **Scale / Dimension**: Disesuaikan dari ukuran proporsional box packaging ke ukuran kartu foto About (`aspect-ratio: 4/3` atau rounded rectangle card).
+2. **Rotasi (Rotation Morphing):**
+   - `rotate`: dari `-4deg` (atau `-3deg` di Hero) berangsur lurus menjadi `0deg` atau sedikit miring halus (`-1.5deg` sesuai style polaroid/card di About) saat masuk viewport About.
+3. **Cross-Fade Isi Konten (Box Pack → Foto Roti):**
+   - **Layer Box Packaging**: Opacity `1` pada scroll `0.0` → turun ke `0` saat scroll mencapai `0.4 - 0.6`.
+   - **Layer Frame Foto Roti (dengan White Border & Shadow)**: Opacity `0` pada scroll `0.0 - 0.3` → fade in naik ke `1` pada rentang `0.5 - 0.8`.
+   - **Border & Radius**: Kartu bertransisi membentuk border putih tebal (`border: 8px solid #ffffff`) dan `border-radius: 20px / 24px` dengan `box-shadow` lembut khas About card.
+4. **Elemen Badge Tempelan di About ("LILZBAKE SURABAYA", "DIPANGGANG SEGAR", "#TasteOfNostalgia"):**
+   - Badge kecil di sekeliling frame About tetap tersembunyi (`opacity: 0`, `scale: 0.8`) saat di Hero, dan baru muncul pop-in (`scale: 1`, `opacity: 1`) dengan easing overshoot saat transisi frame mencapai titik settle di scroll `0.85 - 1.0`.
+
+---
+
+## A.2. About Section — Content Reveal & Entry Behavior
+
+Karena visual utama di kolom kanan About (frame foto) sudah dihadirkan secara mulus lewat transisi scroll dari Hero box (A.1), elemen teks About lainnya masuk mendampingi:
+
+- **Kolom Kiri (Badge "SEJAK 2019", Headline "Bakery yang Setia Sama Rasa Lama", Deskripsi, Pill Features):**
+  - Muncul saat About mulai masuk threshold viewport (`threshold: 0.25`).
+  - Animasi: `opacity: 0 → 1`, `translateY: 20px → 0`.
+  - Durasi: 0.6s, easing `easeOut`.
+  - Stagger: Deskripsi dan badge list bawah ("Bahan Premium", "Tanpa Pengawet", "Resep Nostalgia") muncul stagger 0.08s setelah headline settle.
+- **Micro-Badges di Sekitar Frame Foto:**
+  - Reveal otomatis mengikuti progress scroll mendaratnya kartu (A.1).
+- **Fallback Mobile (< 768px):**
+  - Jika performa di perangkat mobile terbatas atau layout bertumpuk (stacked vertical), matikan continuous morphing.
+  - Ganti dengan: Hero box fade out + parallax biasa, kartu About reveal native dengan `opacity: 0 → 1` dan `scale: 0.96 → 1`.
 
 ---
 
