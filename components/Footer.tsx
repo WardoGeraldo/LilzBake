@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
             </span>
           </div>
           <p className="text-sm sm:text-base text-bg-main/80 max-w-md">
-            Roti &amp; cake jadoel premium dari Surabaya Timur.
+            Roti &amp; cake jadoel premium based in Surabaya.
           </p>
         </div>
 
@@ -93,7 +93,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom copyright notice */}
         <div className="pt-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-bg-main/60">
-          <p>© 2019–Present LilzBake. Semua rasa, semua kangen, dari Surabaya Timur.</p>
+          <p>© 2019–Present LilzBake. Semua rasa, semua kangen, dari Surabaya.</p>
           <p className="font-display italic text-accent-gold/80">#TasteOfNostalgia</p>
         </div>
 

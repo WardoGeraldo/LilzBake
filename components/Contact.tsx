@@ -25,13 +25,13 @@ export const Contact: React.FC = () => {
               Yuk, Pesan Sekarang
             </h2>
             <p className="text-text-body text-base sm:text-lg leading-relaxed">
-              Kami siap bantu dari Surabaya Timur &amp; sekitarnya — chat admin, atau mampir ke Instagram kami.
+              Kami siap bantu dari Surabaya &amp; hingga seluruh Indonesia — chat WhatsApp kami, atau mampir ke Instagram kami.
             </p>
           </ScrollReveal>
         </div>
 
         {/* Contact Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 max-w-4xl mx-auto">
           {CONTACT_CARDS.map((card, idx) => {
             const CardWrapper = card.href ? 'a' : 'div';
             const wrapperProps = card.href
@@ -67,12 +67,6 @@ export const Contact: React.FC = () => {
                     {card.id === 'email' && (
                       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    )}
-                    {card.id === 'area' && (
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                     )}
                   </div>

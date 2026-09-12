@@ -3,13 +3,13 @@ import { WA_LINKS } from './whatsapp';
 export const BRAND = {
   name: 'LilzBake',
   established: '2019',
-  location: 'Surabaya Timur & sekitarnya',
+  location: 'Surabaya hingga Seluruh Indonesia',
   tagline: 'Taste Of Nostalgia',
   instagram: 'https://instagram.com/lilzbake',
   instagramHandle: '@lilzbake',
   email: 'lilzbake.id@gmail.com',
-  phoneAdmin1: '0812-3333-6560',
-  phoneAdmin2: '0812-6722-8888',
+  phoneAdmin1: '0812-1780-0067',
+  phoneAdmin2: '0817-0388-8900',
 };
 
 export const NAVBAR_LINKS = [
@@ -26,7 +26,7 @@ export const HERO_CONTENT = {
   headline: 'Rasa yang Bikin Kangen.',
   tagline: 'Taste Of Nostalgia',
   subheadline:
-    'Roti dan cake jadul premium dari Surabaya Timur — dibuat dengan bahan pilihan, tanpa pengawet, dan resep yang membawa pulang rasa masa kecil.',
+    'Roti dan cake jadul premium based in Surabaya — dibuat dengan bahan pilihan yang premium, tanpa pengawet, dan resep yang membawa pulang rasa nostalgia.',
   primaryCta: 'Pesan via WhatsApp',
   secondaryCta: 'Lihat Produk Kami',
   microCopy: 'Roti Jadoel · Cake Jadoel · Hampers',
@@ -47,7 +47,7 @@ export const ABOUT_CONTENT = {
   badge: 'Sejak 2019',
   title: 'Bakery yang Setia Sama Rasa Lama',
   paragraphs: [
-    'LilzBake lahir dari kerinduan akan rasa roti dan cake jadoel yang lembut, sederhana, dan selalu bikin kangen. Sejak 2019, kami membuat ulang rasa-rasa itu dengan standar yang lebih tinggi: bahan-bahan premium, tanpa bahan pengawet, dan proses yang dikerjakan dengan hati oleh tim kami di Surabaya Timur.',
+    'LilzBake lahir dari kerinduan akan rasa roti dan cake jadoel yang lembut, sederhana, dan selalu bikin kangen. Sejak 2019, kami membuat ulang rasa-rasa itu dengan standar yang lebih tinggi: bahan-bahan premium, tanpa bahan pengawet, dan proses yang dikerjakan dengan hati oleh tim kami di Surabaya.',
     'Dari roti bantal yang empuk, roti sisir yang manis legit, roti smeer yang creamy, sampai cake jadoel dalam kemasan hampers yang cantik. Setiap produk LilzBake dibuat untuk satu tujuan sederhana: mengembalikan rasa masa kecil yang sudah lama hilang dari toko roti modern.',
   ],
   values: ['Bahan Premium', 'Tanpa Pengawet', 'Resep Nostalgia'],
@@ -223,7 +223,7 @@ export const TESTIMONIALS = [
     quote:
       'Order buat hampers lebaran keluarga besar, packaging-nya rapi banget dan rasanya konsisten enak. Bakal repeat tahun depan.',
     author: 'Pak Hadi',
-    location: 'Surabaya Timur',
+    location: 'Tangerang',
   },
   {
     id: '3',
@@ -292,13 +292,6 @@ export const CONTACT_CARDS = [
     label: 'Email',
     value: BRAND.email,
     href: `mailto:${BRAND.email}`,
-    isExternal: false,
-  },
-  {
-    id: 'area',
-    label: 'Area Layanan',
-    value: 'Surabaya Timur & sekitarnya',
-    href: null,
     isExternal: false,
   },
 ];

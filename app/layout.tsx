@@ -20,12 +20,12 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: 'LilzBake — Roti & Cake Jadoel Premium Surabaya | Taste Of Nostalgia',
   description:
-    'LilzBake menghadirkan roti bantal, roti sisir, roti smeer, dan cake jadoel premium tanpa pengawet dari Surabaya Timur. Cocok untuk hampers, oleh-oleh, dan supplier cafe/event.',
+    'LilzBake menghadirkan roti bantal, roti sisir, roti smeer, dan cake jadoel premium tanpa pengawet based in Surabaya. Cocok untuk hampers, oleh-oleh, dan supplier cafe/event.',
   metadataBase: new URL('https://lilzbake.id'),
   openGraph: {
     title: 'LilzBake — Roti & Cake Jadoel Premium Surabaya',
     description:
-      'Taste Of Nostalgia — roti dan cake jadoel premium dari Surabaya Timur.',
+      'Taste Of Nostalgia — roti dan cake jadoel premium based in Surabaya.',
     images: [
       {
         url: '/images/og-image.jpg',
@@ -48,8 +48,8 @@ const jsonLd = {
   '@type': 'Bakery',
   name: 'LilzBake',
   description:
-    'Roti dan cake jadoel premium dari Surabaya Timur, tanpa pengawet, dengan cita rasa nostalgia.',
-  areaServed: 'Surabaya Timur, Indonesia',
+    'Roti dan cake jadoel premium based in Surabaya, tanpa pengawet, dengan cita rasa nostalgia.',
+  areaServed: 'Surabaya, Indonesia',
   telephone: '+6281233336560',
   email: 'lilzbake.id@gmail.com',
   sameAs: ['https://instagram.com/lilzbake'],
