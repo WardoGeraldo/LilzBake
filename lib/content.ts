@@ -26,7 +26,7 @@ export const HERO_CONTENT = {
   headline: 'Rasa yang Bikin Kangen.',
   tagline: 'Taste Of Nostalgia',
   subheadline:
-    'Roti dan cake jadul premium based in Surabaya — dibuat dengan bahan pilihan yang premium, tanpa pengawet, dan resep yang membawa pulang rasa nostalgia.',
+    'Roti dan cake jadul premium based in Surabaya. Dibuat dengan bahan pilihan yang premium, tanpa pengawet, dan resep yang membawa pulang rasa nostalgia.',
   primaryCta: 'Pesan via WhatsApp',
   secondaryCta: 'Lihat Produk Kami',
   microCopy: 'Roti Jadoel · Cake Jadoel · Hampers',
@@ -121,12 +121,12 @@ export const PRODUCTS: Product[] = [
     alt: 'Roti sobek LilzBake disobek menampilkan kelembutan tekstur dalamnya',
   },
   {
-    id: 'eclair',
-    name: 'Eclair',
+    id: 'spikoe-kenari',
+    name: 'Spikoe Kenari',
     description:
-      'Kulit soes renyah dengan isian custard lembut, sentuhan klasik Eropa dalam balutan rasa nostalgia LilzBake.',
-    image: '/images/product-eclair.jpg',
-    alt: 'Eclair LilzBake dengan lapisan cokelat mengilap di atasnya',
+      'Spikoe Kenari khas LilzBake, yang manis, gurih dan lembut. Favorit para lansia.',
+    image: '/images/product-spiku-kenari.jpg',
+    alt: 'Spikoe Kenari LilzBake dengan tekstur lembut dan rasa gurih yang khas',
   },
 ];
 
@@ -181,8 +181,8 @@ export const GALLERY_ITEMS = [
   },
   {
     slot: 8,
-    image: '/images/product-eclair.jpg',
-    alt: 'Eclair LilzBake dengan lapisan cokelat mengilap di atasnya',
+    image: '/images/product-spiku-kenari-2.jpg',
+    alt: 'Spikoe Kenari LilzBake dengan tekstur lembut dan rasa gurih yang khas',
     aspect: 'aspect-[4/5]',
   },
   {
@@ -214,30 +214,30 @@ export const TESTIMONIALS = [
   {
     id: '1',
     quote:
-      'Roti bantalnya beneran bikin kangen masa kecil. Udah langganan dari 2021, nggak pernah kecewa.',
-    author: 'Dinda R.',
+      'Roti bantalnya beneran bikin kangen masa kecil. Udah langganan dari 2019, nggak pernah kecewa.',
+    author: 'Lyvia.',
     location: 'Surabaya',
   },
   {
     id: '2',
     quote:
-      'Order buat hampers lebaran keluarga besar, packaging-nya rapi banget dan rasanya konsisten enak. Bakal repeat tahun depan.',
-    author: 'Pak Hadi',
-    location: 'Tangerang',
+      'Order buat hampers lebaran keluarga besar, packaging-nya rapi banget dan rasanya konsisten enak. Bakal repeat order sih ini.',
+    author: 'Pak Hari',
+    location: 'Malang',
   },
   {
     id: '3',
     quote:
       'Kue susnya juara. Vla-nya lembut, nggak eneg. Admin-nya juga fast response banget kalau tanya-tanya.',
-    author: 'Melissa T.',
-    location: 'Sidoarjo',
+    author: 'Melissa.',
+    location: 'Surabaya Barat',
   },
   {
     id: '4',
     quote:
-      'Langganan buat cafe kami sejak setahun lalu. Konsisten enak dan selalu tepat waktu — penting banget buat operasional kami.',
-    author: 'Owner Kopi Kenangan',
-    location: 'Surabaya',
+      'Langganan buat cafe kami sejak tahun 2022 lalu. Konsisten enak dan selalu tepat waktu, selalu paling cepat sold out di cafe kami.',
+    author: 'Bu Ike, Owner Cafe',
+    location: 'Surabaya Timur',
   },
 ];
 
