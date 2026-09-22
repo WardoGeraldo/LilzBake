@@ -124,7 +124,7 @@ export const PRODUCTS: Product[] = [
     id: 'spikoe-kenari',
     name: 'Spikoe Kenari',
     description:
-      'Spikoe Kenari khas LilzBake, yang manis, gurih dan lembut. Favorit para lansia.',
+      'Spikoe Kenari khas LilzBake, yang manis, gurih dan lembut. Cocok untuk teman minum teh atau kopi di sore hari.',
     image: '/images/product-spiku-kenari.jpg',
     alt: 'Spikoe Kenari LilzBake dengan tekstur lembut dan rasa gurih yang khas',
   },
