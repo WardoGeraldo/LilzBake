@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
             </span>
           </div>
           <p className="text-sm sm:text-base text-bg-main/80 max-w-md">
-            Roti &amp; cake jadoel premium based in Surabaya.
+            Roti &amp; Cake Jadoel Premium based in Surabaya.
           </p>
         </div>
 

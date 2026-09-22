@@ -68,25 +68,25 @@ export const PRODUCTS: Product[] = [
     id: 'roti-bantal',
     name: 'Roti Bantal',
     description:
-      'Empuk, gebul, dan lembut sampai suapan terakhir — favorit yang paling sering diminta ulang oleh pelanggan lama.',
+      'Empuk, gembul, dan lembut sampai suapan terakhir, favorit yang paling sering di repeat order oleh pelanggan LilzBake.',
     image: '/images/product-roti-bantal.jpg',
-    alt: 'Deretan roti bantal LilzBake dengan topping taburan di atas nampan',
+    alt: 'Roti bantal LilzBake yang empuk dan lembut dengan topping yang memuaskan didalamnya',
   },
   {
     id: 'roti-sisir',
     name: 'Roti Sisir',
     description:
-      'Manis legit dengan tekstur berserat khas roti sisir zaman dulu, dipanggang segar setiap hari.',
+      'Manis legit dengan tekstur lembut khas roti sisir jadoel, roti signature dari LilzBake.',
     image: '/images/product-roti-sisir.jpg',
-    alt: 'Roti sisir LilzBake close-up menampilkan tekstur berserat khasnya',
+    alt: 'Roti sisir lembut yang menggiurkan dengan tekstur berserat khas LilzBake',
   },
   {
     id: 'roti-smeer',
     name: 'Roti Smeer',
     description:
-      'Olesan mentega dan gula yang meresap sampai ke dalam — sederhana, tapi susah dilupakan.',
+      'Olesan buttercream manis dan gurih yang meresap sampai ke dalam roti, sederhana, tapi susah dilupakan.',
     image: '/images/product-roti-smeer.jpg',
-    alt: 'Roti smeer LilzBake dengan olesan mentega dan gula yang meresap',
+    alt: 'Roti smeer LilzBake dengan olesan buttercream yang manis dan gurih',
   },
   {
     id: 'roti-assorted',
@@ -94,15 +94,15 @@ export const PRODUCTS: Product[] = [
     description:
       'Kombinasi beberapa rasa favorit dalam satu paket, cocok buat kamu yang nggak bisa milih cuma satu.',
     image: '/images/product-roti-assorted.jpg',
-    alt: 'Beragam jenis roti jadul LilzBake berjajar dalam satu foto',
+    alt: 'Beragam jenis roti asin dari LilzBake, roti kesayangan anak-anak dan keluarga',
   },
   {
     id: 'kue-sus',
-    name: 'Kue Sus Vla',
+    name: 'Kue Soes',
     description:
-      'Kulit tipis renyah, isian vla lembut yang meleleh di mulut — versi premium dari jajanan jadul kesukaan semua orang.',
+      'Kulit tipis renyah, isian vla lembut yang meleleh di mulut, versi premium dari jajanan jadoel kesukaan semua orang.',
     image: '/images/product-kue-sus.jpg',
-    alt: 'Tangan mengambil kue sus LilzBake dari dalam kotak kemasan',
+    alt: 'Kue Soes Signature LilzBake dengan isian vla yang meleleh di mulut',
   },
   {
     id: 'cake-jadoel',
@@ -110,7 +110,7 @@ export const PRODUCTS: Product[] = [
     description:
       'Tekstur padat dan lembut dengan rasa sederhana yang mengingatkan pada cake toko roti langganan keluarga dulu.',
     image: '/images/product-cake-jadoel.jpg',
-    alt: 'Cake jadoel LilzBake dalam kemasan hampers',
+    alt: 'Cake jadoel LilzBake yang beda dari yang lain, dengan tekstur padat dan lembut khasnya',
   },
   {
     id: 'roti-sobek',
@@ -118,65 +118,65 @@ export const PRODUCTS: Product[] = [
     description:
       'Roti lembut yang paling asyik dinikmati beramai-ramai, disobek sepotong demi sepotong bersama orang tersayang.',
     image: '/images/product-roti-sobek.jpg',
-    alt: 'Roti LilzBake disobek menampilkan kelembutan tekstur dalamnya',
+    alt: 'Roti sobek LilzBake disobek menampilkan kelembutan tekstur dalamnya',
   },
   {
     id: 'eclair',
     name: 'Eclair',
     description:
-      'Kulit choux renyah dengan isian custard lembut — sentuhan klasik Eropa dalam balutan rasa nostalgia LilzBake.',
+      'Kulit soes renyah dengan isian custard lembut, sentuhan klasik Eropa dalam balutan rasa nostalgia LilzBake.',
     image: '/images/product-eclair.jpg',
     alt: 'Eclair LilzBake dengan lapisan cokelat mengilap di atasnya',
   },
 ];
 
 export const HAMPERS_BANNER = {
-  text: 'Semua produk di atas bisa dikemas jadi hampers cantik — cocok untuk hadiah, oleh-oleh, atau acara spesialmu.',
+  text: 'Semua produk di atas bisa dikemas jadi hampers cantik, cocok untuk hadiah, oleh-oleh, atau acara spesialmu.',
   image: '/images/product-hampers.jpg',
-  alt: 'Paket hampers LilzBake lengkap siap dikirim ke pelanggan',
+  alt: 'Hampers LilzBake lengkap siap dikirim ke pelanggan',
 };
 
 export const GALLERY_ITEMS = [
   {
     slot: 1,
     image: '/images/product-roti-bantal-2.jpg',
-    alt: 'Deretan roti bantal LilzBake dengan topping taburan di atas nampan',
+    alt: 'Roti bantal LilzBake yang empuk dan lembut dengan topping yang memuaskan didalamnya',
     aspect: 'aspect-[4/5]',
   },
   {
     slot: 2,
     image: '/images/product-roti-sisir-2.jpg',
-    alt: 'Roti sisir LilzBake close-up menampilkan tekstur berserat khasnya',
+    alt: 'Roti sisir lembut yang menggiurkan dengan tekstur berserat khas LilzBake',
     aspect: 'aspect-[4/5]',
   },
   {
     slot: 3,
     image: '/images/product-roti-smeer-2.jpg',
-    alt: 'Roti smeer LilzBake dengan olesan mentega dan gula yang meresap',
+    alt: 'Roti smeer LilzBake dengan olesan buttercream yang manis dan gurih',
     aspect: 'aspect-[4/5]',
   },
   {
     slot: 4,
     image: '/images/product-roti-assorted-2.jpg',
-    alt: 'Beragam jenis roti jadul LilzBake berjajar dalam satu foto',
+    alt: 'Beragam jenis roti asin dari LilzBake, roti kesayangan anak-anak dan keluarga',
     aspect: 'aspect-[4/5]',
   },
   {
     slot: 5,
     image: '/images/product-kue-sus-2.jpg',
-    alt: 'Tangan mengambil kue sus LilzBake dari dalam kotak kemasan',
+    alt: 'Kue Soes Signature LilzBake dengan isian vla yang meleleh di mulut',
     aspect: 'aspect-[4/5]',
   },
   {
     slot: 6,
     image: '/images/product-cake-jadoel.jpg',
-    alt: 'Cake jadoel LilzBake dalam kemasan hampers',
+    alt: 'Cake jadoel LilzBake yang beda dari yang lain, dengan tekstur padat dan lembut khasnya',
     aspect: 'aspect-[4/5]',
   },
   {
     slot: 7,
     image: '/images/product-roti-sobek.jpg',
-    alt: 'Roti LilzBake disobek menampilkan kelembutan tekstur dalamnya',
+    alt: 'Roti sobek LilzBake disobek menampilkan kelembutan tekstur dalamnya',
     aspect: 'aspect-[4/5]',
   },
   {
@@ -188,7 +188,7 @@ export const GALLERY_ITEMS = [
   {
     slot: 9,
     image: '/images/product-hampers.jpg',
-    alt: 'Paket hampers LilzBake lengkap siap dikirim ke pelanggan',
+    alt: 'Hampers LilzBake lengkap siap dikirim ke pelanggan',
     aspect: 'aspect-[4/5]',
   },
 ];
@@ -253,14 +253,14 @@ export const B2B_SERVICES = [
     id: 'hampers',
     title: 'Hampers & Souvenir Acara',
     description:
-      'Paket hampers custom untuk pernikahan, ulang tahun, atau acara kantor — dikemas cantik, siap jadi kenang-kenangan.',
+      'Paket hampers custom untuk pernikahan, ulang tahun, atau acara kantor, dikemas cantik, siap menghadirkan senyuman bagi yang menerimanya.',
     icon: 'gift',
   },
   {
     id: 'catering',
     title: 'Katering Event',
     description:
-      'Pesanan dalam jumlah besar untuk seminar, gathering, atau perayaan spesial lainnya.',
+      'Pesanan dalam jumlah besar untuk acara ulang tahun, pernikahan, seminar, gathering, atau perayaan spesial lainnya.',
     icon: 'utensils',
   },
 ];
