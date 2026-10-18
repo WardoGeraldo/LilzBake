@@ -40,18 +40,18 @@ export const Products: React.FC = () => {
         {/* ============================================================ */}
         
         {/* Mobile View: Horizontal Scroll-Snap */}
-        <div className="sm:hidden -mx-4 px-4 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-6 pt-1 no-scrollbar">
-          {PRODUCTS.map((product, idx) => (
-            <div
-              key={product.id}
-              className="min-w-[80vw] max-w-[85vw] snap-center shrink-0"
-            >
-              <ScrollReveal delay={idx * 0.05}>
+        <ScrollReveal className="sm:hidden">
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-pl-4 -mx-4 px-4 pb-6 pt-1 no-scrollbar">
+            {PRODUCTS.map((product) => (
+              <div
+                key={product.id}
+                className="w-[76vw] snap-start shrink-0"
+              >
                 <ProductCard product={product} />
-              </ScrollReveal>
-            </div>
-          ))}
-        </div>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
 
         {/* Tablet & Desktop View: 2 cols on md, 4 cols on lg */}
         <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7 mb-14">
